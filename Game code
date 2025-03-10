@@ -1,0 +1,50 @@
+import random
+
+# ASCII Arts
+stone = """
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+"""
+paper = """
+     _______
+---'    ____)____
+           ______)
+          _______)
+         _______)
+---.__________)
+"""
+scissor = """
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+"""
+
+stone_paper_scissor = [stone, paper, scissor]
+# User choice
+user_choice = input("Choose 0 for stone, 1 for paper, and 2 for scissor\n")
+print("Your choice\n", stone_paper_scissor[int(user_choice)])
+
+# computer choice 
+computer_choice = random.randint(0, 2)
+print("Computer choice\n", stone_paper_scissor[computer_choice])
+
+# conditional statements
+if int(user_choice) == 0 and computer_choice == 2:
+    print("You win")
+elif int(user_choice) == 2 and computer_choice == 0:
+    print("You lose")
+elif int(user_choice) > computer_choice:
+    print("You win")
+elif int(user_choice) < computer_choice:
+    print("You lose")
+elif int(user_choice) == computer_choice:
+    print("Draw")
+elif int(user_choice) > 2 or int(user_choice) < 0:
+    print("Invalid input")
